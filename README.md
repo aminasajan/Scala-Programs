@@ -23,5 +23,6 @@
 
 ### Notes:
 - It is not necessary that main function needs to be inside an object but inorder to run the main function, it should be inside an object. As the entry point is the main in the object.
-
+- To display whole rows of a dataset, use **csvDF.show(Int.MaxValue)**
+- 
 
