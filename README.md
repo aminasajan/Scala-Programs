@@ -31,7 +31,7 @@
 
 # Implicit
 ## Implicit Parameters: 
-It allow you to define parameters that don't need to be explicitly passed when calling a method or function. Instead, the compiler fills in the values automatically based on the context.
+When a method with implicit parameters is called, the compiler searches for values of the appropriate types in the current scope and fills in the implicit parameters automatically.
  ```
 package com.example
 
@@ -76,4 +76,6 @@ implicit class IntExtensions(value: Int) {
 val num: Int = 5
 val squaredNum: Int = num.squared // Using the implicit method
 ```
+# Notes:
+Implicit classes are typically used to add methods or behavior to existing types through implicit conversions.
 
