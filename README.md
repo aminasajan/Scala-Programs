@@ -12,15 +12,23 @@
 - This ensures that there is a well-defined starting point for the program execution. When the Scala program is run, the main method defined inside the object will be executed.
 - You can access the methods and variables defined in an object from anywhere in your program without the need to instantiate the object.
 - Objects in Scala are lazily initialized and have only one instance throughout the program's execution.
-- 
+ 
 **Companion Objects:** - A companion object is an object with the same name as a class and is defined in the same file.
 
-**def main(args:Array[String]):Unit=** - The main method is a standard entry point for Scala applications.
+```
+def main(args:Array[String]):Unit={}
+```
+ - The main method is a standard entry point for Scala applications.
 - def: This keyword is used to define a method in Scala.
 - main: This is the name of the method. In Scala, the main method is the entry point for running an application. It's where the execution of the program starts.
 - (args: Array[String]): This part defines the method parameters. In this case, args is a parameter of type Array[String]. The Array[String] represents an array of strings, which typically contains command-line arguments passed to the program.
 - : Unit: This part specifies the return type of the method. In Scala, Unit is similar to void in Java, indicating that the method doesn't return any value.
 
+```
+Logger.getLogger("org").setLevel(Level.ERROR)
+```
+- The purpose of this line of code is to configure the logger named "org" to only log messages of severity level ERROR or higher.
+- By setting the logging level to ERROR, less critical log messages are suppressed, resulting in cleaner and more focused log output.
 ### Notes:
 - It is not necessary that main function needs to be inside an object but inorder to run the main function, it should be inside an object. As the entry point is the main in the object.
 - To display whole rows of a dataset, use **csvDF.show(Int.MaxValue)**
@@ -76,6 +84,25 @@ implicit class IntExtensions(value: Int) {
 val num: Int = 5
 val squaredNum: Int = num.squared // Using the implicit method
 ```
-# Notes:
+### Notes:
 Implicit classes are typically used to add methods or behavior to existing types through implicit conversions.
+
+## Type Classes
+Type classes provide a mechanism for defining generic interfaces and behaviors that can be implemented by any data type.
+```
+trait Show[A] {
+  def show(a: A): String
+}
+
+implicit val intShow: Show[Int] = new Show[Int] {
+  def show(a: Int): String = a.toString
+}
+
+def printValue[A](value: A)(implicit ev: Show[A]): Unit = {
+  println(ev.show(value))
+}
+
+printValue(42) // Output: 42
+```
+
 
