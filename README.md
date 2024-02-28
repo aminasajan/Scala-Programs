@@ -148,4 +148,7 @@ Modularization involves organizing code into reusable and logically isolated uni
 - Use mocking frameworks like Mockito or ScalaMock to simulate the behavior of external dependencies and isolate the unit under test.
 - Mock external resources by defining mock objects or stubs that mimic the expected behavior of the real dependencies.
 - Inject mock dependencies into the unit being tested to control its interactions with external resources and ensure deterministic test outcomes.
-  
+
+  ## Documenting Your Code
+- ScalaDoc is a documentation tool for Scala projects that generates HTML documentation from inline comments in the source code.
+- Use ScalaDoc syntax to annotate functions, classes, traits, and objects with descriptive comments that explain their purpose, inputs, outputs, and usage.
