@@ -35,13 +35,10 @@ Logger.getLogger("org").setLevel(Level.ERROR)
   ## Initializing Spark
   
 ```
-
-  def createSparkSession(): SparkSession = {
-    SparkSession.builder()
+  val spark = SparkSession.builder()
       .appName("MySparkApp")
       .master("local[*]")
       .getOrCreate()
-}
 ```
 
 
