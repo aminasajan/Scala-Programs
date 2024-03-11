@@ -1,6 +1,9 @@
 # Scala-Programs
 
-```import org.apache.spark.sql.SparkSession``` - bring the SparkSession class from the Apache Spark SQL library into scope.
+```
+import org.apache.spark.sql.SparkSession
+```
+- bring the SparkSession class from the Apache Spark SQL library into scope.
 - org: This is the top-level package name. Packages provide a way to group related classes and other entities together.
 - apache: This is a sub-package under the org package. It represents the Apache Software Foundation, which is the organization responsible for the Apache Spark project.
 - spark: This is another sub-package under the apache package. It specifically pertains to the Apache Spark project, which is a distributed computing framework for big data processing.
@@ -122,11 +125,11 @@ Modularization involves organizing code into reusable and logically isolated uni
   modular design principles allow for seamless integration of new features and enhancements.
 - Collaboration:
   Modularization encourages collaboration among team members by providing clear boundaries and interfaces between different components of the Spark application.
-  ## Organizing Modules
-  1. Grouping Related Functionality into Separate Modules:
+## Organizing Modules
+1. Grouping Related Functionality into Separate Modules:
   - Identify cohesive sets of functionality within your Spark application that can be encapsulated into distinct modules.
- - For example, you might have modules for data ingestion, data processing, data analysis, and data visualization.
-  2. Defining Module Dependencies in sbt:
+  - For example, you might have modules for data ingestion, data processing, data analysis, and data visualization.
+2. Defining Module Dependencies in sbt:
 - Module dependencies specify the relationships between different modules in your Spark project.
 - Declare dependencies in the build.sbt file using the *libraryDependencies* key.
 - Specify dependencies using the group ID, artifact ID, and version of the external library or module.
@@ -135,14 +138,14 @@ Modularization involves organizing code into reusable and logically isolated uni
 - Packages provide a way to organize code into hierarchical namespaces.
 - Create separate packages for each distinct module in your Spark project.
 - For example, you might have packages like com.example.spark.ingestion, com.example.spark.processing, etc.
-4.Resolving Conflicts and Versioning Issues:
+4. Resolving Conflicts and Versioning Issues:
 - Dependency conflicts can arise when multiple modules depend on different versions of the same library or module.
 - Use sbt's dependency resolution mechanism to resolve conflicts automatically.
 - Specify version ranges for dependencies to allow sbt to choose compatible versions at build time.
 - Manually override dependency versions if necessary, but exercise caution to avoid compatibility issues.
 
 ## Testing Modular Components
- 1. Writing Unit Tests for Modular Spark Components:
+1. Writing Unit Tests for Modular Spark Components:
 - Unit tests focus on testing individual units or modules of your Spark application in isolation.
 - Write unit tests using a testing framework such as ScalaTest, JUnit, or another preferred testing library.
 - Ensure that unit tests cover both positive and negative scenarios, including edge cases and error conditions.
